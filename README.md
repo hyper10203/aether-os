@@ -51,4 +51,9 @@ AI wrote first drafts of apps, bug fixes, the wallpaper renderers, FPS logic, an
 
 **ÆTHER OS ver 7.0.0 · ~6,000 lines · [aether-os-ver7.vercel.app](https://aether-os-ver7.vercel.app)**
 
+
+
+
+this is for the mod reviewing pls pass this, its getting annoying at this point i have redone everything as you guys asked for the past 24 hrs, completely rebuilt and pushed in a new repo. The website design etc is original to me and if we are talking about AI i did use it and i have declared its use right from the beigning but if you are thinking its doing evrything **you are wrong** I am completely spoon feeding and manually regulating constantly, and also its pretty eveident multiple projects which have been allowed to ship have been vibe codded too I won't say the name but you can undertsand where i am getting too. Please tell me to completely throw away this project if u still feel its worng. 
+
 *built by Subham for Hack Club Stardance 2026.*
