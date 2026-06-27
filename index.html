@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ÆTHER OS</title>
+<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Animated cosmic background layers -->
+  <canvas id="starfield" class="starfield"></canvas>
+  <div class="nebula"></div>
+
+  <!-- Boot sequence overlay -->
+  <div id="boot" class="boot">
+    <pre class="boot-logo" id="boot-logo"></pre>
+    <div class="boot-log" id="boot-log"></div>
+    <div class="boot-bar"><div class="boot-bar-fill" id="boot-bar"></div></div>
+    <div class="boot-status" id="boot-status" data-text="NEBULA KERNEL v2.1.5">NEBULA KERNEL v2.1.5</div>
+  </div>
+
+  <!-- Lock screen -->
+  <div id="lock" class="lock hidden">
+    <div class="lock-inner">
+      <div class="lock-clock" id="lock-clock">00:00</div>
+      <div class="lock-date" id="lock-date">Loading…</div>
+      <div class="lock-user">
+        <div class="lock-avatar">✦</div>
+        <div class="lock-name">explorer</div>
+      </div>
+      <input id="lock-pass" type="password" placeholder="Enter password (any)" autocomplete="off" />
+      <button class="lock-unlock" id="lock-unlock">Unlock →</button>
+      <div class="lock-hint">click anywhere / press enter</div>
+    </div>
+  </div>
+
+  <!-- Desktop layer (icons mount here) -->
+  <div id="desktop" class="desktop hidden"></div>
+
+  <!-- Top menu bar -->
+  <div id="menubar" class="menubar hidden">
+    <div class="menubar-left">
+      <span class="menubar-logo" id="active-app-btn">Æ</span>
+      <span class="menubar-app" id="active-app-name">ÆTHER OS</span>
+      <span class="menubar-menu" data-menu="file">File</span>
+      <span class="menubar-menu" data-menu="edit">Edit</span>
+      <span class="menubar-menu" data-menu="view">View</span>
+      <span class="menubar-menu" data-menu="window">Window</span>
+      <span class="menubar-menu" data-menu="help">Help</span>
+    </div>
+    <div class="menubar-right">
+      <span class="sys" id="sys-wifi">📶</span>
+      <span class="sys" id="sys-bat">🔋 87%</span>
+      <span class="sys volume" id="sys-vol">🔊</span>
+      <div class="vol-pop hidden" id="vol-pop"><input type="range" min="0" max="100" value="70" id="vol-slider" /></div>
+      <span class="sys bell" id="sys-bell">🔔</span>
+      <div class="notif-pop hidden" id="notif-pop"></div>
+      <span class="menubar-clock" id="menubar-clock">00:00</span>
+    </div>
+    <!-- dropdown menus -->
+    <div class="menu-dropdown hidden" id="menu-dropdown"></div>
+  </div>
+
+  <!-- Windows mount here -->
+  <div id="windows" class="windows"></div>
+
+  <!-- Alt+Tab switcher -->
+  <div id="switcher" class="switcher hidden">
+    <div class="switcher-inner" id="switcher-inner"></div>
+  </div>
+
+  <!-- Bottom dock -->
+  <div id="dock" class="dock hidden">
+    <div class="dock-inner" id="dock-inner"></div>
+    <div class="dock-sep"></div>
+    <div class="dock-trash" id="dock-trash">🗑</div>
+  </div>
+
+  <!-- Context menu -->
+  <div id="ctx-menu" class="ctx-menu hidden"></div>
+
+  <!-- Spotlight -->
+  <div id="spotlight" class="spotlight hidden">
+    <div class="spot-inner">
+      <input id="spot-input" placeholder="Spotlight — type to search apps, files…" autocomplete="off" />
+      <div id="spot-results"></div>
+    </div>
+  </div>
+
+  <!-- Screenshots helper (used by devlog script to make screenshots) -->
+  <script type="module">
+    import { inject } from "https://cdn.jsdelivr.net/npm/@vercel/analytics@latest/+esm";
+    import { injectSpeedInsights } from "https://cdn.jsdelivr.net/npm/@vercel/speed-insights@latest/+esm";
+    inject({ mode: "production" });
+    injectSpeedInsights({ framework: "vanilla" });
+  </script>
+  <script src="core.js?v=9"></script>
+  <script src="wm.js?v=9"></script>
+  <script src="fs.js?v=9"></script>
+  <script src="apps.js?v=9"></script>
+</body>
+</html>
